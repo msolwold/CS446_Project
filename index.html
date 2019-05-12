@@ -7,177 +7,220 @@ Group 3
 -->
 
 <html lang="en">
-    <head>
-        <title>CSS Template</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Load React -->
         <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
         <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
+
         <style>
-            html {
-                min-height: 100%;
-                margin: 0;
-            }
-            * {
-                box-sizing: border-box;
-            }
-            body {
-                font-family: Arial, Helvetica, sans-serif;
-                margin: 0;
-                height: 100vh;
-            }
+          html {
+            min-height: 100%;
+            margin: 0;
+          }
+          * {
+            box-sizing: border-box;
+          }
+          body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            height: 100vh;
+          }
 
-            header {
-                border-bottom-style: solid;
-                border-bottom-color: #333333;
-                border-bottom-width: 10px;
-                background-color: #100;
-                padding: 10px;
-                text-align: left;
-                font-size: 50px;
-                color: #008000;
+          p {
+            text-align: center;
+          }
+
+          li {
+            margin-top: 20px;
+          }
+
+          header {
+            border-bottom-style: solid;
+            border-bottom-color: #333333;
+            border-bottom-width: 10px;
+            background-color: #100;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            text-align: left;
+            font-size: 50px;
+            color: #008000;
+          }
+
+          nav {
+            display: table-column;
+            float: left;
+            width: 200px;
+            background-color: #008000;
+            padding: 20px;
+          }
+
+          nav ul {
+            list-style-type: none;
+            padding: 0;
+            min-height: 100%;
+          }
+
+          section:after {
+            content: "";
+            display: table;
+            clear: both;
+            min-height: 100%;
+          }
+
+          footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+          }
+
+          @media (max-width: 600px) {
+            nav, article {
+              width: 100%;
+              height: auto;
             }
+          }
 
-            nav {
-                display: table-column;
-                float: left;
-                width: 10%;
-                background-color: #008000;
-                padding: 20px;
-            }
+          #locator { position: absolute; visibility: visible; left: 20px; top: 300px; height: 100px; width: 150px; z-index: 200; }
 
-            nav ul {
-                list-style-type: none;
-                padding: 0;
-                min-height: 100%;
-            }
+          #containerDiv {
 
-            section:after {
-                content: "";
-                display: table;
-                clear: both;
-                min-height: 100%;
-            }
+            border-left-style: solid;
+            border-left-color: #333333;
+            border-left-width: 10px;
+            float: left;
+            padding: 20px;
+            width: 90%;
+            height: 100%;
+            background-color: #000D68;
+          }
 
-            footer {
-                background-color: #777;
-                padding: 10px;
-                text-align: center;
-                color: white;
-            }
+          #profileButton{
+            width: 100px;
+            height: 50px;
+            margin: auto;
+            margin-right: 30px;
+            margin-top: 30px;
+          }
 
-            @media (max-width: 600px) {
-                nav, article {
-                    width: 100%;
-                    height: auto;
-                }
-            }
+          #top {
+            float: left;
+            padding: 10px;
+            width: 90%;
+            background-color: #000D68;
+          }
 
-            #locator { position: absolute; visibility: visible; left: 20px; top: 300px; height: 100px; width: 150px; z-index: 200; }
+          #content {
+            border-left-style: solid;
+            border-left-color: #333333;
+            border-left-width: 10px;
+            float: left;
+            padding: 10px;
+            width: 90%;
+            height: 100%;
+            background-color: #000D68;
+          }
 
-            #containerDiv {
-
-                border-left-style: solid;
-                border-left-color: #333333;
-                border-left-width: 10px;
-                float: left;
-                padding: 20px;
-                width: 90%;
-                height: 100%;
-                background-color: #000D68;
-            }
-
-            #top {
-                float: left;
-                padding: 10px;
-                width: 90%;
-                background-color: #000D68;
-            }
-
-            #content {
-                border-left-style: solid;
-                border-left-color: #333333;
-                border-left-width: 10px;
-                float: left;
-                padding: 10px;
-                width: 90%;
-                height: 100%;
-                background-color: #000D68;
-            }
-
-            #section {
+          #section {
               display: flex;
               flex-flow: row;
               height: 100%;
               width: 100%;
-            }
+          }
         </style>
+
+
         <script type="text/babel">
 
           const divStyle = {
+            height: 100,
             borderStyle: 'solid',
-            marginTop: '2px',
+            margin: 'auto',
+            paddingTop: 5,
             color: "white",
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-around',
           };
+          const innerDiv = {
+            margin: 'auto',
+            alignItems: 'center' ,
+            borderStyle: 'thin',
+          }
+          const innerDivButton = {
+            marginTop: 0,
+          }
 
           function Container(props){
-            if (props.switch){
-              return(
-                <div>
-                  <div style = {divStyle}>
-                    <h1>Hello, World</h1>
+            if (!props.displayToggle){
+              return null;
+            }
+            return(
+              <div>
+                <div style = {divStyle}>
+                  <div style = {innerDiv}>
+                  <p>Group Posted By: Leitert</p>
+                  <p>Event: Capture the Flag</p>
                   </div>
-                  <div style = {divStyle}>
-                    <h1>Hello, World</h1>
+                  <div style = {innerDiv}>
+                  Group Members: 2
                   </div>
-                  <div style = {divStyle}>
-                    <h1>Hello, World</h1>
+                  <div style = {innerDiv}>
+                  Looking for: 3
                   </div>
-                  <div style = {divStyle}>
-                    <h1>Hello, World</h1>
-                  </div>
-                  <div style = {divStyle}>
-                    <h1>Hello, World</h1>
+                  <div style = {innerDivButton}>
+                  <button>Request to join Group</button>
                   </div>
                 </div>
-              );
-            } else {
-              return <div></div>;
-            }
+                <div style = {divStyle}>
+                  <div style = {innerDiv}>
+                    <p>Group Posted By: xdee</p>
+                    <p>Event: Competetive</p>
+                  </div>
+                  <div style = {innerDiv}>
+                    Group Members: 4
+                  </div>
+                  <div style = {innerDiv}>
+                    Looking for: 1
+                  </div>
+                  <div style = {innerDivButton}>
+                    <button>Request to join Group</button>
+                  </div>
+
+                </div>
+              </div>
+            );
           }
 
           class ContainerButton extends React.Component {
             constructor(props){
               super(props);
               this.state = {count: 1};
+              this.state = {displayToggle: false};
 
-              this.handleClickTrue = this.handleClickTrue.bind(this);
-              this.handleClickFalse = this.handleClickFalse.bind(this);
+              this.handleClick = this.handleClick.bind(this);
             }
 
-            handleClickTrue(props){
-              this.setState({count: this.state.count + 1});
-              ReactDOM.render(<Container switch = {true} count = {this.state.count} />, document.getElementById('root'));
-            }
-
-            handleClickFalse(props){
-              this.setState({count: this.state.count - 1});
-              ReactDOM.render(<Container switch = {false} count = {this.state.count} />, document.getElementById('root'));
+            handleClick(props){
+              this.setState(state => ({
+                displayToggle: !state.displayToggle
+                }));
+              ReactDOM.render(<Container displayToggle = {this.state.displayToggle} />, document.getElementById('root'));
             }
 
             render() {
+              ReactDOM.render(<Container displayToggle = {this.state.displayToggle} />, document.getElementById('root'));
               return (
                 <div>
-                  {this.state.count}
-                  <button onClick={this.handleClickTrue}>
-                    Add
-                  </button>
-                  <button onClick={this.handleClickFalse}>
-                    Remove
+                  <button onClick={this.handleClick}>
+                    {!this.state.displayToggle ? 'Show' : 'Hide'}
                   </button>
                 </div>
 
@@ -188,36 +231,39 @@ Group 3
 
           ReactDOM.render(<ContainerButton/>, document.getElementById('buttons'));
         </script>
-    </head>
-    <body>
+      </head>
+      <body>
         <h2></h2>
         <p></p>
         <p></p>
         <header>
-            <h2>TeamPlay</h2>
+          <h2>TeamPlay</h2>
+          <button id="profileButton"> Profile </button>
         </header>
         <section id="section">
-            <nav>
-                <ul>
-                    <h2>Library</h2>
-                    <li><a href="#">Apex Legends</a></li>
-                    <li><a href="#">World of Warcraft</a></li>
-                    <li><a href="#">Rocket League</a></li>
-                </ul>
-            </nav>
-            <div id="containerDiv">
-                <div id="top">
-                    <button type="button">Make a Group</button>
-                </div>
-                <div id="content">
-                  <div id="buttons"></div>
-                  <div id="root"></div>
-                </div>
+          <nav>
+            <ul>
+              <h2>Library</h2>
+              <li><a href="#">Apex Legends</a></li>
+              <li><a href="#">World of Warcraft</a></li>
+              <li><a href="#">Rocket League</a></li>
+            </ul>
+          </nav>
+          <div id="containerDiv">
+            <div id="top">
+              <button type="button">Make a Group</button>
             </div>
+            <div id="content">
+              <div id="buttons"></div>
+              <div id="root"></div>
+              <div id="posts">
+              </div>
+            </div>
+          </div>
         </section>
-<!--
+        <!--
         <footer>
         </footer>
--->
-    </body>
-</html>
+        -->
+      </body>
+    </html>
