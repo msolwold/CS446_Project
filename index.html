@@ -10,260 +10,494 @@ Group 3
   <head>
     <title>CSS Template</title>
     <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Load React -->
-        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
-
-        <style>
-          html {
-            min-height: 100%;
-            margin: 0;
-          }
-          * {
-            box-sizing: border-box;
-          }
-          body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-            height: 100vh;
-          }
-
-          p {
-            text-align: center;
-          }
-
-          li {
-            margin-top: 20px;
-          }
-
-          header {
-            border-bottom-style: solid;
-            border-bottom-color: #333333;
-            border-bottom-width: 10px;
-            background-color: #100;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            text-align: left;
-            font-size: 50px;
-            color: #008000;
-          }
-
-          nav {
-            display: table-column;
-            float: left;
-            width: 200px;
-            background-color: #008000;
-            padding: 20px;
-          }
-
-          nav ul {
-            list-style-type: none;
-            padding: 0;
-            min-height: 100%;
-          }
-
-          section:after {
-            content: "";
-            display: table;
-            clear: both;
-            min-height: 100%;
-          }
-
-          footer {
-            background-color: #777;
-            padding: 10px;
-            text-align: center;
-            color: white;
-          }
-
-          @media (max-width: 600px) {
-            nav, article {
-              width: 100%;
-              height: auto;
-            }
-          }
-
-          #locator { position: absolute; visibility: visible; left: 20px; top: 300px; height: 100px; width: 150px; z-index: 200; }
-
-          #containerDiv {
-
-            border-left-style: solid;
-            border-left-color: #333333;
-            border-left-width: 10px;
-            float: left;
-            padding: 20px;
-            width: 90%;
-            height: 100%;
-            background-color: #000D68;
-          }
-
-          #profileButton{
-            width: 100px;
-            height: 50px;
-            margin: auto;
-            margin-right: 30px;
-            margin-top: 30px;
-          }
-
-          #top {
-            float: left;
-            padding: 10px;
-            width: 90%;
-            background-color: #000D68;
-          }
-
-          #content {
-            border-left-style: solid;
-            border-left-color: #333333;
-            border-left-width: 10px;
-            float: left;
-            padding: 10px;
-            width: 90%;
-            height: 100%;
-            background-color: #000D68;
-          }
-
-          #section {
-              display: flex;
-              flex-flow: row;
-              height: 100%;
-              width: 100%;
-          }
-        </style>
+    <!-- Load React -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
 
-        <script type="text/babel">
+    <style>
+      html {
+        min-height: 100%;
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
 
-          const divStyle = {
-            height: 100,
-            borderStyle: 'solid',
-            margin: 'auto',
-            paddingTop: 5,
-            color: "white",
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-          };
-          const innerDiv = {
-            margin: 'auto',
-            alignItems: 'center' ,
-            borderStyle: 'thin',
-          }
-          const innerDivButton = {
-            marginTop: 0,
-          }
 
-          function Container(props){
-            if (!props.displayToggle){
-              return null;
-            }
-            return(
-              <div>
-                <div style = {divStyle}>
-                  <div style = {innerDiv}>
-                  <p>Group Posted By: Leitert</p>
-                  <p>Event: Capture the Flag</p>
-                  </div>
-                  <div style = {innerDiv}>
-                  Group Members: 2
-                  </div>
-                  <div style = {innerDiv}>
-                  Looking for: 3
-                  </div>
-                  <div style = {innerDivButton}>
-                  <button>Request to join Group</button>
-                  </div>
-                </div>
-                <div style = {divStyle}>
-                  <div style = {innerDiv}>
-                    <p>Group Posted By: xdee</p>
-                    <p>Event: Competetive</p>
-                  </div>
-                  <div style = {innerDiv}>
-                    Group Members: 4
-                  </div>
-                  <div style = {innerDiv}>
-                    Looking for: 1
-                  </div>
-                  <div style = {innerDivButton}>
-                    <button>Request to join Group</button>
-                  </div>
+      body {
+        background-color:rgb(0,0,0);
+        background-image:url(http://www.zingerbugimages.com/backgrounds/beige_parchment_paper_background_1800x1600.jpg);
+        background-position:center center;background-repeat:no-repeat;background-attachment:fixed;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
 
-                </div>
+      a {
+        color: #FFFFFF;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      li {
+        margin-top: 20px;
+      }
+
+      header {
+        border-bottom-style: solid;
+        border-bottom-color: #333333;
+        border-bottom-width: 10px;
+        background-color: #990000;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        text-align: left;
+        font-size: 50px;
+        color: #CCCC66;
+        height: 20%;
+      }
+
+      nav {
+        display: table-column;
+        float: left;
+        width: 200px;
+        background-color: #990000;
+        padding: 20px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        min-height: 100%;
+        color: #CCCC66;
+      }
+
+      section:after {
+        content: "";
+        display: table;
+        clear: both;
+        min-height: 100%;
+      }
+
+      @media (max-width: 600px) {
+        nav, article {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      #locator { position: absolute; visibility: visible; left: 20px; top: 300px; height: 100px; width: 150px; z-index: 200; }
+
+      #containerDiv {
+
+        border-left-style: solid;
+        border-left-color: #333333;
+        border-left-width: 10px;
+        float: left;
+        padding: 20px;
+        width: 90%;
+        height: 100%;
+      }
+
+      #profileButton{
+        width: 100px;
+        height: 30px;
+      }
+
+      #top {
+        float: left;
+        padding: 10px;
+        width: 90%;
+      }
+
+      #content {
+        border-left-style: solid;
+        border-top-style: solid;
+        border-color: #fffaf0;
+        border-width: 5px;
+        float: left;
+        padding: 10px;
+        width: 90%;
+        height: 100%;
+      }
+
+      #section {
+          display: flex;
+          flex-flow: row;
+          height: 100%;
+          width: 100%;
+      }
+    </style>
+
+
+    <script type="text/babel">
+
+      const popUp = {
+        position: 'absolute',
+        borderStyle: 'solid',
+        borderColor: '#fffaf0',
+        width: '40%',
+        height: '60%',
+        left: '35%',
+        top: '30%',
+        backgroundColor: 'white',
+        boxShadow: '5px 5px 30px 10px grey',
+      };
+
+      const divStyle = {
+        height: 100,
+        backgroundColor: '#990000',
+        borderStyle: 'solid',
+        margin: 'auto',
+        marginTop: 5,
+        paddingTop: 5,
+        color: "white",
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      };
+
+      const btnGroup = {
+        backgroundColor: '#4CAF50',
+        borderSize: '1',
+        borderStyle: 'solid',
+        borderColor: 'green',
+        color: 'white',
+        paddingTop: '10',
+        paddingRight: '24',
+        marginBottom: 30,
+        cursor: 'pointer',
+        float: 'left',
+        width: '100%'
+      };
+
+      const textBox = {
+        width: '100%',
+        height: 100,
+      };
+
+      const requirements = {
+        width: '100%',
+        height: '80%',
+        borderStyle: 'solid',
+        borderColor: 'black',
+        borderWidth: 1,
+      };
+      const innerDiv = {
+        margin: 'auto',
+        alignItems: 'center' ,
+        borderStyle: 'thin',
+      };
+      const innerDivButton = {
+        height: 30,
+        marginTop: 5,
+        marginRight: 5,
+      };
+
+      const headerComponent = {
+        padding: 10,
+        paddingTop: 15,
+        height: '50%',
+      }
+
+      const finishButtons = {
+        float: 'right',
+      }
+
+      const formHeader = {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        height: '20%',
+        marginBottom: 40,
+      };
+      const bodyElement = {
+        height: '70%',
+        width: '100%',
+      };
+
+      const form = {
+        margin: 10,
+        height: '100%',
+      }
+
+      function Container(props){
+        if (!props.displayToggle){
+          return null;
+        }
+        return(
+          <div>
+            <div style = {divStyle}>
+              <div style = {innerDiv}>
+              <p>Group Posted By: Leitert</p>
+              <p>Event: Capture the Flag</p>
               </div>
-            );
-          }
-
-          class ContainerButton extends React.Component {
-            constructor(props){
-              super(props);
-              this.state = {count: 1};
-              this.state = {displayToggle: false};
-
-              this.handleClick = this.handleClick.bind(this);
-            }
-
-            handleClick(props){
-              this.setState(state => ({
-                displayToggle: !state.displayToggle
-                }));
-              ReactDOM.render(<Container displayToggle = {this.state.displayToggle} />, document.getElementById('root'));
-            }
-
-            render() {
-              ReactDOM.render(<Container displayToggle = {this.state.displayToggle} />, document.getElementById('root'));
-              return (
-                <div>
-                  <button onClick={this.handleClick}>
-                    {!this.state.displayToggle ? 'Show' : 'Hide'}
-                  </button>
-                </div>
-
-              );
-            }
-
-          }
-
-          ReactDOM.render(<ContainerButton/>, document.getElementById('buttons'));
-        </script>
-      </head>
-      <body>
-        <h2></h2>
-        <p></p>
-        <p></p>
-        <header>
-          <h2>TeamPlay</h2>
-          <button id="profileButton"> Profile </button>
-        </header>
-        <section id="section">
-          <nav>
-            <ul>
-              <h2>Library</h2>
-              <li><a href="#">Apex Legends</a></li>
-              <li><a href="#">World of Warcraft</a></li>
-              <li><a href="#">Rocket League</a></li>
-            </ul>
-          </nav>
-          <div id="containerDiv">
-            <div id="top">
-              <button type="button">Make a Group</button>
+              <div style = {innerDiv}>
+              Group Members: 2
+              </div>
+              <div style = {innerDiv}>
+              Looking for: 3
+              </div>
+              <div style = {innerDivButton}>
+              <button style = {innerDivButton}>Request to join Group</button>
+              </div>
             </div>
-            <div id="content">
-              <div id="buttons"></div>
-              <div id="root"></div>
-              <div id="posts">
+            <div style = {divStyle}>
+              <div style = {innerDiv}>
+                <p>Group Posted By: xdee</p>
+                <p>Event: Competetive</p>
+              </div>
+              <div style = {innerDiv}>
+                Group Members: 4
+              </div>
+              <div style = {innerDiv}>
+                Looking for: 1
+              </div>
+              <div style = {innerDivButton}>
+                <button style = {innerDivButton}>Request to join Group</button>
+              </div>
+            </div>
+            <div style = {divStyle}>
+              <div style = {innerDiv}>
+                <p>Group Posted By: xdee</p>
+                <p>Event: Casual</p>
+              </div>
+              <div style = {innerDiv}>
+                Group Members: 2
+              </div>
+              <div style = {innerDiv}>
+                Looking for: 3
+              </div>
+              <div style = {innerDivButton}>
+                <button style = {innerDivButton}>Request to join Group</button>
+              </div>
+            </div>
+            <div style = {divStyle}>
+              <div style = {innerDiv}>
+                <p>Group Posted By: xdee</p>
+                <p>Event: Death Match</p>
+              </div>
+              <div style = {innerDiv}>
+                Group Members: 3
+              </div>
+              <div style = {innerDiv}>
+                Looking for: 2
+              </div>
+              <div style = {innerDivButton}>
+                <button style = {innerDivButton}>Request to join Group</button>
+              </div>
+            </div>
+            <div style = {divStyle}>
+              <div style = {innerDiv}>
+                <p>Group Posted By: xdee</p>
+                <p>Event: Competetive</p>
+              </div>
+              <div style = {innerDiv}>
+                Group Members: 2
+              </div>
+              <div style = {innerDiv}>
+                Looking for: 1
+              </div>
+              <div style = {innerDivButton}>
+                <button style = {innerDivButton}>Request to join Group</button>
               </div>
             </div>
           </div>
-        </section>
-        <!--
-        <footer>
-        </footer>
-        -->
-      </body>
-    </html>
+        );
+      }
+
+      function closePopUp() {
+        ReactDOM.render(<MakeGroupPage displayToggle = 'false' />, document.getElementById('createGroup'));
+      }
+
+      function submitForm() {
+        ReactDOM.render(<MakeGroupPage displayToggle = 'false' />, document.getElementById('createGroup'));
+      }
+
+      function MakeGroupPage(props){
+        if (!props.displayToggle){
+          return null;
+        }
+
+        return (
+          <div style = {popUp}>
+
+            <form style = {form}>
+              <div style = {formHeader}>
+                <div style = {{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
+                  <div style = {headerComponent}>
+                    Username:
+                    <input type="text" name="username"></input>
+                  </div>
+
+                  <div style = {headerComponent}>
+                    <select style = {{float: 'right', paddingRight: 10}}>
+                      <option value="none">None</option>
+                      <option value="discord">Discord</option>
+                      <option value="teamspeak">Teamspeak</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style = {{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
+                  <div style = {headerComponent}>
+                    Looking for
+                    <input type="text" name="numplayers" style = {{width: 20, marginRight: 5, marginLeft: 5}}></input>
+                    players
+                  </div>
+
+
+                  <div style = {headerComponent}>
+                    <div style = {{float: 'right', paddingRight: 10}}>
+                      Members currently in group:
+                      <input type="text" name="numplayersgrouped" style = {{width: 20, marginLeft: 5}}></input>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div style = {bodyElement}>
+
+                <div style={btnGroup}>
+                  <button type = "button" style={{width:'33.3%'}}>Apple</button>
+                  <button type = "button" style={{width:'33.3%'}}>Samsung</button>
+                  <button type = "button" style={{width:'33.3%'}}>Sony</button>
+                </div>
+
+                Group Description:
+                <textarea style = {textBox}>
+
+                </textarea>
+
+                <div style = {{marginTop: 30, height: '30%'}}>
+                  Requirements:
+                  <div style = {requirements}>
+
+
+                  </div>
+                </div>
+
+                <div style = {finishButtons}>
+                  <button onClick = {closePopUp}>
+                    Cancel
+                  </button>
+                  <button onClick = {submitForm}>
+                    Submit
+                  </button>
+                </div>
+
+              </div>
+
+            </form>
+
+
+          </div>
+        )
+
+      }
+
+
+      class MakeGroupButton extends React.Component {
+        constructor(props){
+          super(props);
+          this.state = {displayToggle: false};
+
+          this.handleClick = this.handleClick.bind(this);
+        }
+
+        handleClick(props){
+          this.setState(state => ({
+            displayToggle: !state.displayToggle
+            }));
+          ReactDOM.render(<MakeGroupPage displayToggle = {this.state.displayToggle} />, document.getElementById('createGroup'));
+        }
+
+        render() {
+          ReactDOM.render(<MakeGroupPage displayToggle = {this.state.displayToggle} />, document.getElementById('createGroup'));
+          return (
+            <div>
+              <button onClick={this.handleClick} style = {{height: 40}}>
+                Create Group!
+              </button>
+            </div>
+          );
+        }
+      }
+
+      class ContainerButton extends React.Component {
+        constructor(props){
+          super(props);
+          this.state = {count: 1};
+          this.state = {displayToggle: true};
+
+          this.handleClick = this.handleClick.bind(this);
+        }
+
+        handleClick(props){
+          this.setState(state => ({
+            displayToggle: !state.displayToggle
+            }));
+          ReactDOM.render(<Container displayToggle = {this.state.displayToggle} />, document.getElementById('root'));
+        }
+
+        render() {
+          ReactDOM.render(<Container displayToggle = {this.state.displayToggle} />, document.getElementById('root'));
+          return (
+            <div>
+              <button onClick={this.handleClick}>
+                {!this.state.displayToggle ? 'Show' : 'Hide'}
+              </button>
+            </div>
+          );
+        }
+
+      }
+
+      ReactDOM.render(<ContainerButton/>, document.getElementById('buttons'));
+      ReactDOM.render(<MakeGroupButton/>, document.getElementById('makeGroup'));
+    </script>
+
+  </head>
+  <body>
+    <header>
+      <h2>TeamPlay</h2>
+      <button id="profileButton"> Profile </button>
+    </header>
+    <section id="section">
+      <nav>
+        <ul>
+          <h2 style = "border-bottom: solid #F1F1D4">Library</h2>
+          <li><a href="#">Apex Legends</a></li>
+          <li><a href="#">World of Warcraft</a></li>
+          <li><a href="#">Rocket League</a></li>
+        </ul>
+      </nav>
+      <div id="containerDiv">
+        <div id="createGroup"></div>
+        <div id="pop-up"></div>
+        <div id="top">
+          <div id="makeGroup"></div>
+        </div>
+        <div id="content">
+          <div id="buttons"></div>
+          <div id="root"></div>
+          <div id="posts">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--
+    <footer>
+    </footer>
+    -->
+  </body>
+  </html>
