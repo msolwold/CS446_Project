@@ -152,9 +152,35 @@ Group 3
         boxShadow: '5px 5px 30px 10px grey',
       };
 
-      const divStyle = {
+      const divStyleWOW = {
+        height: 100,
+        backgroundColor: '#D4A656',
+        borderStyle: 'solid',
+        margin: 'auto',
+        marginTop: 5,
+        paddingTop: 5,
+        color: "white",
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      };
+
+      const divStyleCOD = {
         height: 100,
         backgroundColor: '#990000',
+        borderStyle: 'solid',
+        margin: 'auto',
+        marginTop: 5,
+        paddingTop: 5,
+        color: "white",
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+      };
+
+      const divStyleRL = {
+        height: 100,
+        backgroundColor: '#0060ff',
         borderStyle: 'solid',
         margin: 'auto',
         marginTop: 5,
@@ -235,7 +261,10 @@ Group 3
         }
         return(
           <div>
-            <div style = {divStyle}>
+            <div style = {divStyleWOW}>
+              <div style = {innerDiv}>
+              <img src = {"./Assets/wow.png"} width = {'40px'} height = {'40px'}/>
+              </div>
               <div style = {innerDiv}>
               <p>Group Posted By: Leitert</p>
               <p>Event: Capture the Flag</p>
@@ -250,9 +279,12 @@ Group 3
               <button style = {innerDivButton}>Request to join Group</button>
               </div>
             </div>
-            <div style = {divStyle}>
+            <div style = {divStyleWOW}>
               <div style = {innerDiv}>
-                <p>Group Posted By: xdee</p>
+              <img src = {"./Assets/wow.png"} width = {'40px'} height = {'40px'}/>
+              </div>
+              <div style = {innerDiv}>
+                <p>Group Posted By: Harrison</p>
                 <p>Event: Competetive</p>
               </div>
               <div style = {innerDiv}>
@@ -265,9 +297,12 @@ Group 3
                 <button style = {innerDivButton}>Request to join Group</button>
               </div>
             </div>
-            <div style = {divStyle}>
+            <div style = {divStyleCOD}>
               <div style = {innerDiv}>
-                <p>Group Posted By: xdee</p>
+              <img src = {"./Assets/apex.jpg"} width = {'40px'} height = {'40px'}/>
+              </div>
+              <div style = {innerDiv}>
+                <p>Group Posted By: Devendra</p>
                 <p>Event: Casual</p>
               </div>
               <div style = {innerDiv}>
@@ -280,9 +315,12 @@ Group 3
                 <button style = {innerDivButton}>Request to join Group</button>
               </div>
             </div>
-            <div style = {divStyle}>
+            <div style = {divStyleRL}>
               <div style = {innerDiv}>
-                <p>Group Posted By: xdee</p>
+              <img src = {"./Assets/RL.jpg"} width = {'40px'} height = {'40px'}/>
+              </div>
+              <div style = {innerDiv}>
+                <p>Group Posted By: Cavalcanti</p>
                 <p>Event: Death Match</p>
               </div>
               <div style = {innerDiv}>
@@ -295,9 +333,66 @@ Group 3
                 <button style = {innerDivButton}>Request to join Group</button>
               </div>
             </div>
-            <div style = {divStyle}>
+            <div style = {divStyleCOD}>
               <div style = {innerDiv}>
-                <p>Group Posted By: xdee</p>
+              <img src = {"./Assets/apex.jpg"} width = {'40px'} height = {'40px'}/>
+              </div>
+              <div style = {innerDiv}>
+                <p>Group Posted By: Vajda</p>
+                <p>Event: Competetive</p>
+              </div>
+              <div style = {innerDiv}>
+                Group Members: 2
+              </div>
+              <div style = {innerDiv}>
+                Looking for: 1
+              </div>
+              <div style = {innerDivButton}>
+                <button style = {innerDivButton}>Request to join Group</button>
+              </div>
+            </div>
+            <div style = {divStyleRL}>
+              <div style = {innerDiv}>
+              <img src = {"./Assets/RL.jpg"} width = {'40px'} height = {'40px'}/>
+              </div>
+              <div style = {innerDiv}>
+                <p>Group Posted By: Lulofs</p>
+                <p>Event: Competetive</p>
+              </div>
+              <div style = {innerDiv}>
+                Group Members: 2
+              </div>
+              <div style = {innerDiv}>
+                Looking for: 1
+              </div>
+              <div style = {innerDivButton}>
+                <button style = {innerDivButton}>Request to join Group</button>
+              </div>
+            </div>
+            <div style = {divStyleWOW}>
+              <div style = {innerDiv}>
+              <img src = {"./Assets/wow.png"} width = {'40px'} height = {'40px'}/>
+              </div>
+              <div style = {innerDiv}>
+                <p>Group Posted By: Andonie</p>
+                <p>Event: Competetive</p>
+              </div>
+              <div style = {innerDiv}>
+                Group Members: 2
+              </div>
+              <div style = {innerDiv}>
+                Looking for: 1
+              </div>
+              <div style = {innerDivButton}>
+                <button style = {innerDivButton}>Request to join Group</button>
+              </div>
+            </div>
+            <div style = {divStyleRL}>
+              <div style = {innerDiv}>
+              <img src = {"./Assets/RL.jpg"} width = {'40px'} height = {'40px'}/>
+              </div>
+              <div style = {innerDiv}>
+                <p>Group Posted By: Kovalerchuk</p>
                 <p>Event: Competetive</p>
               </div>
               <div style = {innerDiv}>
@@ -368,9 +463,9 @@ Group 3
               <div style = {bodyElement}>
 
                 <div style={btnGroup}>
-                  <button type = "button" style={{width:'33.3%'}}>Apple</button>
-                  <button type = "button" style={{width:'33.3%'}}>Samsung</button>
-                  <button type = "button" style={{width:'33.3%'}}>Sony</button>
+                  <button type = "button" style={{width:'33.3%'}}>World of Warcaft</button>
+                  <button type = "button" style={{width:'33.3%'}}>Apex</button>
+                  <button type = "button" style={{width:'33.3%'}}>Rocket League</button>
                 </div>
 
                 Group Description:
